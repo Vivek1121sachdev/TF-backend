@@ -8,10 +8,11 @@
 
 terraform {
   backend "s3" {
-    bucket = "vivek-terraform-backend"
+    bucket = "vivek-s3-backend-demo"
     key    = "backend/terrafrom.tfstate"
-    region = "us-east-1"
+    region = "us-west-2"
     # skip_credentials_validation = true
-    profile = "tf-user"
+    profile = "sandbox"
+    dynamodb_table = "vivek-terraform-state-locking"
 }
 }
